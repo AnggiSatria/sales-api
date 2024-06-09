@@ -2,9 +2,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const salesRoutes = require("./routes/sales");
+require("dotenv").config(); // Memuat variabel lingkungan dari file .env
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT;
 
 // Middleware
 app.use(bodyParser.json());
