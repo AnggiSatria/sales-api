@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const salesRoutes = require("./routes/sales");
+const cors = require("cors");
 require("dotenv").config(); // Memuat variabel lingkungan dari file .env
 
 const app = express();
@@ -9,6 +10,7 @@ const PORT = process.env.PORT;
 
 // Middleware
 app.use(bodyParser.json());
+app.use(cors());
 
 // Routes
 app.use("/sales", salesRoutes);
