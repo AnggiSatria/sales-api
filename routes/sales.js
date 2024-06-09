@@ -17,54 +17,22 @@ function validateDate(req, res, next) {
   next();
 }
 
-// GET all sales
-router.get("/", async (req, res) => {
-  try {
-    const sales = await Sales.find();
-    res.json(sales);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
+router.get("/", validateDate, async (req, res) => {
+  const { product, start_date, end_date } = req.query;
+  const query = {};
+
+  if (product) {
+    query.product = { $regex: product, $options: "i" }; // 'i' for case-insensitive
   }
-});
 
-// GET sales by product
-router.get("/product", async (req, res) => {
-  const product = req.query.product;
-  try {
-    const sales = await Sales.find({ product: product });
-    res.json(sales);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
+  if (start_date || end_date) {
+    query.date = {};
+    if (start_date) query.date.$gte = new Date(start_date);
+    if (end_date) query.date.$lte = new Date(end_date);
   }
-});
-
-// GET sales by date range
-// router.get("/date", async (req, res) => {
-//   const startDate = new Date(req.query.start_date);
-//   const endDate = new Date(req.query.end_date);
-//   try {
-//     const sales = await Sales.find({
-//       date: {
-//         $gte: startDate,
-//         $lte: endDate,
-//       },
-//     });
-//     res.json(sales);
-//   } catch (err) {
-//     res.status(500).json({ message: err.message });
-//   }
-// });
-
-router.get("/date", validateDate, async (req, res) => {
-  const { start_date, end_date } = req.query;
 
   try {
-    const sales = await Sales.find({
-      date: {
-        $gte: start_date ? new Date(start_date) : new Date("1970-01-01"),
-        $lte: end_date ? new Date(end_date) : new Date(),
-      },
-    });
+    const sales = await Sales.find(query);
     res.json(sales);
   } catch (err) {
     res.status(500).json({ message: err.message });
