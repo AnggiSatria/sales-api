@@ -1,0 +1,66 @@
+[
+  {
+    "_id": "6665735035cb3cb6e52ac1c7",
+    "product": "Kelas Fullstack Developer",
+    "date": "2023-01-01T00:00:00.000Z",
+    "sales": 150,
+    "revenue": 10000000,
+    "__v": 0
+  },
+  {
+    "_id": "6665736135cb3cb6e52ac1ca",
+    "product": "Kelas Frontend Developer",
+    "date": "2023-01-01T00:00:00.000Z",
+    "sales": 150,
+    "revenue": 10000000,
+    "__v": 0
+  },
+  {
+    "_id": "6665737035cb3cb6e52ac1cd",
+    "product": "Kelas Backend Developer",
+    "date": "2023-01-01T00:00:00.000Z",
+    "sales": 150,
+    "revenue": 10000000,
+    "__v": 0
+  },
+  {
+    "_id": "6665738235cb3cb6e52ac1d0",
+    "product": "Kelas Java Developer",
+    "date": "2023-01-01T00:00:00.000Z",
+    "sales": 150,
+    "revenue": 10000000,
+    "__v": 0
+  },
+  {
+    "_id": "6665739935cb3cb6e52ac1d3",
+    "product": "Kelas QA Engineer",
+    "date": "2023-01-01T00:00:00.000Z",
+    "sales": 150,
+    "revenue": 10000000,
+    "__v": 0
+  },
+  {
+    "_id": "666573ba35cb3cb6e52ac1d6",
+    "product": "Kelas Golang",
+    "date": "2023-01-01T00:00:00.000Z",
+    "sales": 100,
+    "revenue": 1000000,
+    "__v": 0
+  },
+  {
+    "_id": "666573dd35cb3cb6e52ac1d9",
+    "product": "Kelas AI Developer",
+    "date": "2023-01-01T00:00:00.000Z",
+    "sales": 100,
+    "revenue": 1000000,
+    "__v": 0
+  },
+  {
+    "_id": "6665740935cb3cb6e52ac1dc",
+    "product": "Kelas Java",
+    "date": "2023-01-01T00:00:00.000Z",
+    "sales": 100,
+    "revenue": 2000000,
+    "__v": 0
+  }
+]
